@@ -23,8 +23,7 @@ ENV CGO_ENABLED 0
 RUN apt-get update \
     && apt-get install -y apt-utils sudo \
     && apt-get install unattended-upgrades -y \
-    && apt-get upgrade -y \
-    && apt-get install git curl make
+    && apt-get upgrade -y
 
 # Add the given user and it to sudo-group
 RUN useradd -d /home/dev -s /bin/bash ${USER} -G sudo \
