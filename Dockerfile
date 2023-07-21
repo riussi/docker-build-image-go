@@ -4,6 +4,10 @@ FROM golang:1.20.6-bookworm
 ########################################
 # METADATA
 LABEL author="Juha Ristolainen <juha.ristolainen@iki.fi>"
+LABEL org.opencontainers.image.vendor="Juha Ristolainen"
+LABEL org.opencontainers.image.source="https://github.com/riussi/docker-build-image-go"
+LABEL org.opencontainers.image.description="My personal Go builder-image"
+LABEL org.opencontainers.image.licenses="Apache 2.0"
 
 ########################################
 # ARGUMENTS
@@ -11,7 +15,6 @@ ARG USER=dev
 
 ########################################
 # ENVIRONMENT
-# GITHUB_TOKEN, GITLAB_TOKEN and GITEA_TOKEN
 ENV DEBIAN_FRONTEND "noninteractive"
 ENV HOME /home/${USER}
 ENV GOLANGCILINT_VERSION 1.53.3
